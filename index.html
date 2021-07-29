@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>MiniBank</title>
+  </head>
+  <body>
+    <!-- TOP NAVIGATION -->
+    <nav id="nav">
+      <i class="fas fa-piggy-bank"></i>
+      <p class="welcome">
+        Bem vindo ao MiniBank. Faça login para iniciar ou
+        <a class="create_account" href="#">crie uma conta</a>.
+      </p>
+
+      <form class="login">
+        <input
+          type="text"
+          placeholder="usuário"
+          class="login__input login__input--user"
+          maxlength="4"
+        />
+        <!-- In practice, use type="password" -->
+        <input
+          type="password"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </button>
+        <button class="show-help">
+          <i class="far fa-list-alt"></i> Contas
+        </button>
+      </form>
+    </nav>
+
+    <div class="reception">
+      <h1>Bem vindo ao <span class="highlight">MiniBank</span></h1>
+    </div>
+
+    <div id="overlay" class="hidden"></div>
+
+    <div class="manager hidden">
+      <h1><i class="far fa-list-alt"></i> Gerenciar Contas</h1>
+
+      <div class="tabelaContas">
+        <!---------LINHAS-->
+        <div id="linhaContainer">
+          <div class="linha">
+            <span class="titular"
+              ><i class="fas fa-user-lock"></i> TITULAR: Athos Franco de Sá
+              Feitosa</span
+            >
+            <span class="usuario">USUÁRIO: aff</span>
+
+            <button class="btn-editAcc">Editar</button>
+            <button class="btn-deleteAcc">Deletar</button>
+          </div>
+          <div class="linha">
+            <span class="titular"
+              ><i class="fas fa-user-lock"></i> TITULAR: Letícia Souza
+              Ferreira</span
+            >
+            <span class="usuario">USUÁRIO: lsf</span>
+
+            <button class="btn-editAcc">Editar</button>
+            <button class="btn-deleteAcc">Deletar</button>
+          </div>
+        </div>
+
+        <!---------LINHAS-->
+      </div>
+      <div class="flex-row">
+        <button class="managerBtnCreateAcc">Criar nova conta</button>
+        <button class="closeManager" onclick="reloadPage">Fechar</button>
+      </div>
+    </div>
+
+    <div class="createAcc hidden">
+      <h1><i class="fas fa-user-alt"></i> Criar Conta</h1>
+
+      <p class="note">
+        O seu usuário será gerado automaticamente através das iniciais do seu
+        nome completo.<br />
+        Exemplo: o usuário de 'João Barbosa Silva' é JBS.
+      </p>
+
+      <form action="">
+        <label for="nome_completo">Nome Completo</label><br />
+        <input
+          class="create__input"
+          type="text"
+          name="nome_completo"
+          id="nome_completo"
+          maxlength="26"
+        /><br />
+        <span class="error_create_acc">Error message</span><br />
+        <label for="PIN">PIN (4 Dígitos)</label><br />
+        <input
+          class="create__input"
+          type="password"
+          name="PIN"
+          id="PIN"
+          maxlength="4"
+        /><br />
+        <span class="error_create_pin">Error message</span><br />
+
+        <div class="flexrow">
+          <button class="confirm-alert" id="btnCreateAcc">Criar Conta</button>
+          <button class="confirm-alert" id="btnCancelCreate">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <main class="app">
+      <!-- BALANCE -->
+      <div class="balance">
+        <div>
+          <h1 class="bigwelcome__label">Bem vindo,</h1>
+
+          <p class="balance__label">Balanço atual</p>
+          <p class="balance__date">Data <span class="date">05/03/2037</span></p>
+        </div>
+        <p class="balance__value">R$ 0.000,00</p>
+      </div>
+
+      <!-- MOVEMENTS -->
+      <div class="movements">
+        <div class="movements__row">
+          <div class="movements__type movements__type--depósito">
+            2 depósito
+          </div>
+          <div class="movements__date">3 days ago</div>
+          <div class="movements__value">4 000€</div>
+        </div>
+        <div class="movements__row">
+          <div class="movements__type movements__type--saque">1 saque</div>
+          <div class="movements__date">24/01/2037</div>
+          <div class="movements__value">-378€</div>
+        </div>
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="summary">
+        <div>
+          <p class="summary__label">Entrada</p>
+          <p class="summary__value summary__value--in">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">Saída</p>
+          <p class="summary__value summary__value--out">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">Poupança</p>
+          <p class="summary__value summary__value--interest">0000€</p>
+        </div>
+
+        <button class="btn--sort">&downarrow; Organizar</button>
+      </div>
+
+      <!-- OPERATION: TRANSFERS -->
+      <div class="operation operation--transfer">
+        <h2>Transferir valor</h2>
+        <form class="form form--transfer">
+          <input type="text" class="form__input form__input--to" />
+          <input type="number" class="form__input form__input--amount" />
+          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <label class="form__label">Destino</label>
+          <label class="form__label">Quantia</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: LOAN -->
+      <div class="operation operation--loan">
+        <h2>Solicitar empréstimo</h2>
+        <form class="form form--loan">
+          <input type="number" class="form__input form__input--loan-amount" />
+          <button class="form__btn form__btn--loan">&rarr;</button>
+          <label class="form__label form__label--loan">Quantia</label>
+        </form>
+      </div>
+
+      <!-- OPERATION: CLOSE -->
+      <div class="operation operation--close">
+        <h2>Encerrar conta</h2>
+        <form class="form form--close">
+          <input type="text" class="form__input form__input--user" />
+          <input
+            type="password"
+            maxlength="6"
+            class="form__input form__input--pin"
+          />
+          <button class="form__btn form__btn--close">&rarr;</button>
+          <label class="form__label">Confirmar usuário</label>
+          <label class="form__label">Confirmar PIN</label>
+        </form>
+      </div>
+
+      <!-- LOGOUT TIMER -->
+      <div class="disconnect-div">
+        <button class="btnLogout hidden">Desconectar</button>
+        <p class="logout-timer">
+          Você será automaticamente desconectado em
+          <span class="timer">05:00</span>
+        </p>
+      </div>
+    </main>
+
+    <!-- <footer>
+      &copy; by Jonas Schmedtmann. Don't claim as your own :)
+    </footer> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!---
+ATRIBUIÇÕES FREEPIK:
+<a href='https://br.freepik.com/fotos/computador'>Computador foto criado por drobotdean - br.freepik.com</a>
+
+
+
+
+
+-->

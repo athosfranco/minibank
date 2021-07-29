@@ -1,0 +1,648 @@
+/*
+ * Use this CSS to learn some intersting techniques,
+ * in case you're wondering how I built the UI.
+ * Have fun! 😁
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  cursor: default;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='0.24' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cuse fill='%23fafafa' href='%23s' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23f5f5f5' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23f5f5f5' href='%23s'/%3E%3Cuse fill='%23f0f0f0' href='%23s' x='2'/%3E%3Cuse fill='%23f0f0f0' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23ebebeb'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23ebebeb'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23e5e5e5'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23e0e0e0'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23eaeeff'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23eaeeff'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(20.55) translate(-951.34 -713.5)'%3E%3Cg fill='%23eaeeff'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+#overlay {
+  position: fixed;
+  width: 105%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  cursor: default;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.reception {
+  cursor: default;
+  margin: 2rem;
+  z-index: 2;
+  font-size: 5rem;
+  position: absolute;
+  top: 300px;
+  left: 900px;
+  color: #444;
+  display: none;
+}
+
+.show-help {
+  border: none;
+  font-size: 2rem;
+}
+
+.manager {
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  position: absolute;
+  top: 10vh;
+  left: 23vw;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: default;
+  margin: 2rem;
+  z-index: 11;
+  font-size: 2rem;
+}
+
+.createAcc {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  position: absolute;
+  top: 15vh;
+  left: 25vw;
+  z-index: 11;
+}
+
+.error_create_acc,
+.error_create_pin {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  color: red;
+  opacity: 0%;
+}
+
+.success {
+  color: dark-green;
+}
+
+.note {
+  font-size: 1.7rem;
+  margin: 0.5rem 2rem 1rem 2rem;
+}
+
+.reception p {
+  font-size: 2rem;
+}
+
+.highlight {
+  font-weight: 700;
+  color: rgb(51, 51, 51);
+}
+
+.welcome {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+
+.login {
+  display: flex;
+}
+
+.fa-piggy-bank {
+  padding: 0.5rem;
+  font-size: 5rem;
+}
+
+.btnLogout {
+  cursor: pointer;
+  border: 1px solid #f55c47;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 19rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  background-color: #f55c47;
+  color: black;
+  transition: all 0.3s;
+}
+
+.btnLogout:hover {
+  font-size: 1.65rem;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+.login__input {
+  border: 1px solid rgb(168, 168, 168);
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 19rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+
+  color: inherit;
+  transition: all 0.3s;
+}
+
+.create__input {
+  border: 1px solid rgb(168, 168, 168);
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 80%;
+  border-radius: 10rem;
+  margin-right: 1rem;
+
+  color: inherit;
+  transition: all 0.3s;
+}
+
+.login__input:focus,
+.create__input:focus {
+  outline: none;
+  border: 1px solid rgb(85, 85, 85);
+}
+
+.login__input::placeholder,
+.create__input::placeholder {
+  color: #bbb;
+}
+
+.login__btn,
+.show-help {
+  /* border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s; */
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 19rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  background-color: black;
+  color: white;
+  transition: all 0.3s;
+}
+
+.tabelaContas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titular,
+.usuario {
+  margin: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+}
+
+.btn-editAcc {
+  margin-left: 1rem;
+  cursor: pointer;
+  border: 1px solid #39b385;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 10rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  background-color: #39b385;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-deleteAcc {
+  cursor: pointer;
+  border: 1px solid #e52a5a;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 10rem;
+
+  border-radius: 1rem;
+  margin-right: 1rem;
+  background-color: #e52a5a;
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn-editAcc:hover,
+.btn-deleteAcc:hover {
+  transform: scale(1.08);
+}
+
+.login__btn:hover,
+.show-help:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+.btn-criarUsuario,
+.confirm-alert,
+.managerBtnCreateAcc,
+.closeManager {
+  cursor: pointer;
+  border: 1px solid rgb(168, 168, 168);
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 19rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: white;
+  background-color: rgb(51, 51, 51);
+  transition: all 0.3s;
+}
+
+.btn-criarUsuario:hover,
+.confirm-alert:hover,
+.managerBtnCreateAcc:hover,
+.closeManager:hover {
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+/* MAIN */
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 7rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+
+  /* NOTE This creates the fade in/out anumation */
+  opacity: 0;
+  transition: all 1s;
+}
+
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.balance__date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/* MOVEMENTS */
+.movements {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.movements__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.movements__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.movements__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.movements__type--depósito {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.movements__type--saque {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.movements__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+.bigwelcome__label {
+  font-size: 3rem;
+}
+
+/* SUMMARY */
+.summary {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary__value {
+  font-size: 2.6rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #1e6f5c;
+}
+
+.summary__value--out {
+  color: #f5465d;
+}
+
+.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* OPERATIONS */
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+
+.operation--transfer {
+  background-color: #66de93;
+}
+
+.operation--loan {
+  background-color: #28b5b5;
+}
+
+.operation--close {
+  background-color: #f55c47;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+/* Exceptions for interst */
+.form.form--loan {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+.form__label--loan {
+  grid-row: 2;
+}
+/* End exceptions */
+
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form__btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-timer {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.timer {
+  font-weight: 600;
+}
+
+/*-------------MEDIA QUERIES--------------*/
+
+@media only screen and (max-width: 812px) {
+  body {
+    max-width: 100vw;
+  }
+
+  .summary {
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .summary__value {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+    margin-left: 3.4rem;
+    text-align: center;
+    position: absolute;
+    top: 35vh;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    z-index: 10;
+  }
+
+  .show-help {
+    margin-top: 1rem;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+  }
+
+  .login__input {
+    margin-bottom: 1rem;
+  }
+
+  .balance__value {
+    font-size: 3rem;
+  }
+  .app {
+    position: relative;
+    max-width: 100vw;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    /* NOTE This creates the fade in/out anumation */
+    /* display: none;
+    opacity: 0;
+    transition: all 1s; */
+  }
+
+  .createAcc {
+    margin: 0;
+    top: 20vh;
+    left: 5vw;
+    right: 5vw;
+    z-index: 11;
+  }
+}
