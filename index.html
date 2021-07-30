@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="/icon.png" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -60,34 +59,12 @@
 
     <div class="manager hidden">
       <h1><i class="far fa-list-alt"></i> Gerenciar Contas</h1>
-
-      <div class="tabelaContas">
-        <!---------LINHAS-->
-        <div id="linhaContainer">
-          <div class="linha">
-            <span class="titular"
-              ><i class="fas fa-user-lock"></i> TITULAR: Athos Franco de Sá
-              Feitosa</span
-            >
-            <span class="usuario">USUÁRIO: aff</span>
-
-            <button class="btn-editAcc">Editar</button>
-            <button class="btn-deleteAcc">Deletar</button>
-          </div>
-          <div class="linha">
-            <span class="titular"
-              ><i class="fas fa-user-lock"></i> TITULAR: Letícia Souza
-              Ferreira</span
-            >
-            <span class="usuario">USUÁRIO: lsf</span>
-
-            <button class="btn-editAcc">Editar</button>
-            <button class="btn-deleteAcc">Deletar</button>
-          </div>
-        </div>
-
-        <!---------LINHAS-->
+      <div class="usuario-manager">
+        <span>TITULAR: Athos Franco de Sá Feitosa</span>
+        <span>USUÁRIO: aff</span>
+        <button id="btn-delete-acc" class="btnLogout">Deletar Conta</button>
       </div>
+
       <div class="flex-row">
         <button class="managerBtnCreateAcc">Criar nova conta</button>
         <button class="closeManager" onclick="reloadPage">Fechar</button>

@@ -284,7 +284,8 @@ btnLogin.addEventListener('click', function (e) {
   } else {
     if (currentAccount?.pin === Number(inputLoginPin.value))
       //MOSTRA UI E MENSAGEM DE BOAS-VINDAS
-      containerApp.style.opacity = 100;
+      window.scrollTo(0, 0);
+    containerApp.style.opacity = 100;
     btnLogout.classList.toggle('hidden');
     loginForm.classList.toggle('hidden');
     navContainer.classList.toggle('hidden');
